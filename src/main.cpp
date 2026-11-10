@@ -1,13 +1,10 @@
 #include<SDL2/SDL.h>
 #include<iostream>
 #include<memory>
+#include<vector>
 
 struct Vec2{
     float x,y;
-};
-
-struct Object{
-    Vec2 pos,vel,acc;
 };
 
 int main(){
@@ -32,7 +29,11 @@ int main(){
     if(!renderer)
         std::cerr << "Renderer error: " << SDL_GetError() << "\n";
 
-    std::cout << "Hello Wolrd\n";
+    std::vector<Vec2> pos = {};
+    std::vector<Vec2> vel = {};
+    std::vector<Vec2> acc = {};
+    
+    std::vector<float> mass = {};
 
     SDL_Event e;
     int running = 1;
